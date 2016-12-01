@@ -1,0 +1,81 @@
+# All base configuration options for Boundless Economy.
+
+
+# Controls if certain messages are displayed in the console.
+# true - Messages WILL be displayed.
+# false - Messages WILL NOT be displayed.
+show-debug: false
+show-stack-trace: false
+
+# COMMAND OPTIONS
+# /Balance
+# The chat box message that will appear right before showing players their balance.
+balance-message: "&f---&6Your Wallet&f---"
+balance-message-enable: true
+# Controls if users can see currencies they might not have permissions for.
+# true - CAN see permissioned currencies.
+# false - CAN NOT see permissioned currencies.
+show-hidden-currency: false
+
+
+# /BalanceOther
+# The message that will display right before showing another player's balance.
+# %PLAYER% - Name of the player.
+balance-other-message: "&f---&6%PLAYER%'s Wallet&f---"
+balance-other-message-enable: true
+
+# /Pay
+# The message the sender will receive upon transferring funds.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency transferred.
+# %TARGET% - Player which the funds were transferred to.
+pay-to-sender: "&f%VALUE% %CURRENCY%&r transferred to %TARGET%."
+pay-to-sender-enable: true
+# The message the target will receive upon transferring funds.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency transferred.
+# %SENDER% - Player which the funds were transferred from.
+pay-to-target: "&f%VALUE% %CURRENCY%&r received from %SENDER%."
+pay-to-target-enable: true
+
+# /Economy Give
+# The message that will be displayed to the sender upon giving the funds.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency given.
+# %TARGET% - Player which the funds were transferred to.
+give-to-sender: "%VALUE% %CURRENCY%&r has been given to %TARGET%."
+give-to-sender-enable: true
+# The message that will be displayed to the receiver of the funds.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency given.
+# %SENDER% - Player which the funds were transferred from.
+give-to-target: "%SENDER% has given you %VALUE% %CURRENCY%&r."
+give-to-target-enable: true
+
+# /Economy Subtract
+# The message that will be displayed to the sender upon removing the funds.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency removed.
+# %TARGET% - Player which the funds were removed from.
+subtract-to-sender: "%VALUE% %CURRENCY%&r has been taken from %TARGET%."
+subtract-to-sender-enable: true
+# The message that will be displayed to the player whom the funds were removed from.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency removed.
+# %SENDER% - Player which the funds were removed from.
+subtract-to-target: "%SENDER% has taken %VALUE% %CURRENCY%&r from you."
+subtract-to-target-enable: true
+
+# /Economy Set
+# The message that will be displayed to the sender upon setting the funds.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency set.
+# %TARGET% - Player whom funds were set.
+set-to-sender: "%TARGET%'s balance has been set to %VALUE% %CURRENCY%&r."
+set-to-sender-enable: true
+# The message that will be displayed to the player who's funds were set.
+# %VALUE% - Amount of currency.
+# %CURRENCY% - Display name of the currency set.
+# %SENDER% - Player which the funds were removed from.
+set-to-target: "%SENDER% has set your %CURRENCY%&r balance to %VALUE%."
+set-to-target-enable: true

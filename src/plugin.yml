@@ -1,0 +1,19 @@
+name: Iocia-Economy
+version: 1.0.0
+author: Hunky524
+
+main: iocia.network.economy.core.Main
+
+commands:
+    balance:
+        description: Allows users to see their current account balance.
+        aliases: [bal, b]
+    balanceother:
+        description: Allows server admins to see other player's account balance.
+        aliases: [balo, bo, balanceo, balother, bother]
+    pay:
+        description: Used by players if they want to transfer funds to another player.
+        aliases: []
+    economy:
+        description: Allows access to admin economy commands.
+        aliases: [econ]

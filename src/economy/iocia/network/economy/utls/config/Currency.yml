@@ -1,0 +1,55 @@
+# This is where you can add and remove currency types from the server.
+
+# If you need to recreate this file for whatever reason, delete it from the plugin data folder
+# and restart your server.
+
+
+# Each currency has five attributes, an ID tag followed by four control tags:
+# The tags are formatted like this:
+# ID:
+#     display-name:
+#     permissions:
+#     enabled:
+#     initial-amount:
+#
+# ID - The ID tag of the currency that will be used by the plugin code to distinguish
+#      it from other currencies.
+#      No two currencies can have the same ID. If more than one currency have the same ID,
+#      only the first currency will be registered.
+#
+# display-name - This is name that will appear to players on the server when they interact with the currecny.
+#                The currency names support Minecraft color codes meaning you can change the color
+#                of each currency's display name.
+#                DEFAULT - ID of the currency
+#
+# permissions - Allows specified currencies to be locked behind permissions. If a user does not
+#               have any of the permissions set, the user will not be able to perform any interactions
+#               involving the currency; in other words, they cannot use it.
+#               Leave the field blank to disable the permission requirement.
+#               DEFAULT - none
+#
+# enabled - Controls whether or not the currency "exists" on your server. If set to true,
+#           the currency will be enabled and can be used by players. If set to false,
+#           no player on the server will be able to see or interact with the currency.
+#           However, the currency can still be manipulated by the server console; for example,
+#           if a currency's enabled flag is set to false, the console can still add or subtract values
+#           without the player's knowledge.
+#           You will probably want to keep this true unless you want to use it as some sort if
+#           invisible counter.
+#           DEFAULT - true
+#
+# initial-amount - Allows players to start off with a set amount of the specific currency.
+#                  DEFAULT - 0
+
+
+gold:
+    display-name: "&6Gold"
+    permissions: []
+    enabled: true
+    initial-amount: 0
+
+gem:
+    display-name: "&bGems"
+    permissions: [economy.all, economy.gem]
+    enabled: true
+    initial-amount: 500
