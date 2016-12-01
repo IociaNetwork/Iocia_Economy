@@ -1,2 +1,2 @@
 # Iocia_Economy
-Economy plugin used by Iocia Network.
+This is the economy plugin used by all Iocia Network servers.
