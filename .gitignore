@@ -1,3 +1,6 @@
 *.xml
 src/src.iml
 *.iml
+*.class
+out/production/src/iocia/network/economy/utls/config/Currency.yml
+out/production/src/iocia/network/economy/utls/config/Config.yml
