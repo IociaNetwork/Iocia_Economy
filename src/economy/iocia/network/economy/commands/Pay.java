@@ -1,7 +1,9 @@
 package iocia.network.economy.commands;
 
+import iocia.network.economy.core.Main;
 import iocia.network.economy.currency.CurrencyContainer;
 import iocia.network.economy.currency.PlayerCoinController;
+import iocia.network.economy.tasks.PayDelay;
 import iocia.network.economy.utls.LogTypes;
 import iocia.network.economy.utls.config.ConfigOptions;
 import org.bukkit.Bukkit;
@@ -87,9 +89,19 @@ public class Pay implements TabExecutor {
             return false;
         }
 
+        if (ConfigOptions.PAY_TIMER_ENABLE) {
+            if (PayDelay.getInstance().contains(sender)) {
+                String timerMessage = ChatColor.translateAlternateColorCodes('&', ConfigOptions.PAY_TIMER_MESSAGE);
+                timerMessage = timerMessage.replaceAll("%TIME%", Long.toString(PayDelay.getInstance().getTime(sender)));
+                sender.sendMessage(timerMessage);
+                return false;
+            }
+        }
+
         DecimalFormat format = new DecimalFormat("#,###");
         PlayerCoinController.getPlayerCoin(sender).subtractBalance(ID, amount);
         PlayerCoinController.getPlayerCoin(target).addBalance(ID, amount);
+        PayDelay.getInstance().addEntry(sender);
 
         if (ConfigOptions.PAY_TO_SENDER_ENABLE) {
             String senderMessage = ChatColor.translateAlternateColorCodes('&', ConfigOptions.PAY_TO_SENDER);

@@ -65,7 +65,7 @@ public class ConfigOptions {
         PAY_TO_TARGET = config.getString("Commands.Pay.target-message", "&f%VALUE% %CURRENCY%&r received from %SENDER%.");
         PAY_TO_TARGET_ENABLE = config.getBoolean("Commands.Pay.target-message-enable", true);
         PAY_TIMER = config.getLong("Commands.Pay.timer", 5);
-        PAY_TIMER_MESSAGE = config.getString("Commands.Pay.timer-message", "Please wait &6%TIME%&r before using that command again.");
+        PAY_TIMER_MESSAGE = config.getString("Commands.Pay.timer-message", "Please wait &6%TIME%&r seconds before using that command again.");
         PAY_TIMER_ENABLE = config.getBoolean("Commands.Pay.timer-enable", true);
 
         ECON_GIVE_SENDER = config.getString("Commands.Economy.Give.sender-message", ChatColor.WHITE + "%VALUE% %CURRENCY%&r has been given to %TARGET%.");

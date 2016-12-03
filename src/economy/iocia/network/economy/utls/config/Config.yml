@@ -26,7 +26,7 @@ Commands:
         target-message: "&f%VALUE% %CURRENCY%&r received from %SENDER%."
         target-message-enable: true
         timer: 5
-        timer-message: "Please wait &6%TIME%&r before using that command again."
+        timer-message: "Please wait &6%TIME%&r seconds before using that command again."
         timer-enable: true
     Economy:
         Give:

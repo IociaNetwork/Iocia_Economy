@@ -8,6 +8,7 @@ import iocia.network.economy.currency.CurrencyContainer;
 import iocia.network.economy.currency.PlayerCoinController;
 import iocia.network.economy.listeners.PlayerJoin;
 import iocia.network.economy.listeners.PlayerLeave;
+import iocia.network.economy.tasks.PayDelay;
 import iocia.network.economy.utls.config.Config;
 import iocia.network.economy.utls.config.ConfigOptions;
 import org.bukkit.Bukkit;
@@ -33,6 +34,7 @@ public class Main extends JavaPlugin {
 
         initializeListeners();
         initializeCommands();
+        initializeTimers();
 
     }
 
@@ -68,6 +70,13 @@ public class Main extends JavaPlugin {
         getCommand("BalanceOther").setExecutor(new BalanceOther());
         getCommand("Pay").setExecutor(new Pay());
         getCommand("Economy").setExecutor(new Economy());
+
+    }
+
+    private void initializeTimers() {
+
+        PayDelay.initInstance();
+        PayDelay.getInstance().runTaskTimer(this, 0L, ConfigOptions.PAY_TIMER);
 
     }
 
