@@ -4,3 +4,4 @@ src/src.iml
 *.class
 out/production/src/iocia/network/economy/utls/config/Currency.yml
 out/production/src/iocia/network/economy/utls/config/Config.yml
+out/artifacts/src_jar/Iocia_Economy (V1.0.0).jar
