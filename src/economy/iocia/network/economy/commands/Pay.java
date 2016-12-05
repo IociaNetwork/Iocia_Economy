@@ -96,12 +96,12 @@ public class Pay implements TabExecutor {
                 sender.sendMessage(timerMessage);
                 return false;
             }
+            PayDelay.getInstance().addEntry(sender);
         }
 
         DecimalFormat format = new DecimalFormat("#,###");
         PlayerCoinController.getPlayerCoin(sender).subtractBalance(ID, amount);
         PlayerCoinController.getPlayerCoin(target).addBalance(ID, amount);
-        PayDelay.getInstance().addEntry(sender);
 
         if (ConfigOptions.PAY_TO_SENDER_ENABLE) {
             String senderMessage = ChatColor.translateAlternateColorCodes('&', ConfigOptions.PAY_TO_SENDER);

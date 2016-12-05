@@ -75,8 +75,10 @@ public class Main extends JavaPlugin {
 
     private void initializeTimers() {
 
-        PayDelay.initInstance();
-        PayDelay.getInstance().runTaskTimer(this, 0L, ConfigOptions.PAY_TIMER);
+        if (ConfigOptions.PAY_TIMER_ENABLE) {
+            PayDelay.initInstance();
+            PayDelay.getInstance().runTaskTimer(this, 0L, ConfigOptions.PAY_TIMER);
+        }
 
     }
 
