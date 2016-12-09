@@ -6,7 +6,8 @@ import iocia.network.economy.commands.Pay;
 import iocia.network.economy.commands.economy.Economy;
 import iocia.network.economy.currency.CurrencyContainer;
 import iocia.network.economy.currency.PlayerCoinController;
-import iocia.network.economy.listeners.PlayerUpdate;
+import iocia.network.economy.listeners.PlayerJoin;
+import iocia.network.economy.listeners.PlayerLeave;
 import iocia.network.economy.tasks.PayDelay;
 import iocia.network.economy.utls.config.Config;
 import iocia.network.economy.utls.config.ConfigOptions;
@@ -58,7 +59,8 @@ public class Main extends JavaPlugin {
 
     private void initializeListeners() {
 
-        getServer().getPluginManager().registerEvents(new PlayerUpdate(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        getServer().getPluginManager().registerEvents(new PlayerLeave(), this);
 
     }
 
